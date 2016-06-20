@@ -2,7 +2,7 @@
 # Repro of detail/observables mahem
 
 ```
-git clone
+git clone git@github.com:katowulf/npmphxrepro2.git
 npm install
 npm start
 ```
