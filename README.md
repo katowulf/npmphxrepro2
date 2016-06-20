@@ -2,7 +2,7 @@
 # Repro of detail/observables mahem
 
 ```
-git clone https://github.com/katowulf/ngphx2016.git
+git clone
 npm install
 npm start
 ```
