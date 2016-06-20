@@ -9,20 +9,18 @@ import { FirebaseObjectObservable } from 'angularfire2';
     <div class="detail">
       <form #form (submit)="saveData($event, form.value)">
       <h1>{{ (hobby | async)?.name }}</h1>
-      
+
       <label>Name</label>
-      <input value="{{ (hobby | async)?.name }}" placeholder="name">
-      
-      <!--<label>Description</label>-->
-      <!--<input [(ngModel)]="hobby.description" placeholder="description">-->
-      <!---->
-      <!--<label>Count</label>-->
-      <!--<input type="number" [(ngModel)]="hobby.count" placeholder="count">-->
-      <!---->
-      <!--<label>Units</label>-->
-      <!--<input [(ngModel)]="hobby.units" placeholder="units">-->
-      
-      <p><button type="submit">Save</button></p>
+      <input [ngModel]="(hobby | async)?.name" (ngModelChange)="hobby.update({name: $event})" placeholder="name">
+
+      <label>Description</label>
+      <input [ngModel]="(hobby | async)?.description" (ngModelChange)="hobby.update({description: $event})" placeholder="description">
+
+      <label>Count</label>
+      <input type="number" [ngModel]="(hobby | async)?.count" (ngModelChange)="hobby.update({count: $event})" placeholder="count">
+
+      <label>Units</label>
+      <input [ngModel]="(hobby | async)?.units" (ngModelChange)="hobby.update({units: $event})" placeholder="units">
       </form>
     </div>
     <pre>{{hobby | async | json}}</pre>
